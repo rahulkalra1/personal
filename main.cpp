@@ -199,6 +199,9 @@ vector<struct hiker> create_list_for_job(list<struct hiker> *hlist, int job)
 	list<struct hiker>::iterator it;
 	vector<struct hiker> h;
 
+       int max1 = 0;
+       struct hiker h1, h2;
+
 	for(int i = 0;i <= job; i++)
 	{
     		for (it = hlist[i].begin(); it != hlist[i].end(); ++it)
@@ -210,6 +213,22 @@ vector<struct hiker> create_list_for_job(list<struct hiker> *hlist, int job)
 			h.push_back(hk);
 
 		}
+	        if (max1) {
+                   h.push_back(h2);
+                }
+                if (i != job) {
+                   h2 = hlist[i+1].back();
+                   h1 = h.back();
+                   if (h2.speed > h1.speed) {
+                       max1 = 0;
+                   } else {
+                       h.pop_back();
+                       max1 = 1;
+                       h2 = h1;
+                   }
+
+              }
+
 	}
 
 	return h;
