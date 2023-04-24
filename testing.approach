@@ -1,0 +1,2 @@
+We calculate the time to cross the bridge in parallel by spawing workers threads.
+And maintain the value as shared variable ; also storing in a file to compare if same result
