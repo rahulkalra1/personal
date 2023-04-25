@@ -1,0 +1,6 @@
+We have each bridge that can take 2 hikers, and a speed of crossing bridge is speed of slowest hiker.  And there is one torch . To get the fastest time to cross the bridge is have the fastest person be a partner everytime to cross the bridge , and he is the only one to come back and get the other hiker. 
+We just have to keep track of the fastest hiker in every bridge. When parsing file itself we store the fastest hiker as the last element of the hiker list per bridge. That way of we fetch the last element of hiker list he/she will be the faster hiker
+We just need the fastest hikers which will be the last element of the list. We don’t have to sort or run any priority queue or maintain extra datastructure for this . Since during parsing the yaml file we make sure we store the fastest runner in the end of the vector for that bridge . 
+When calculating itself we just get the fastest hiker as a last element and get his time taking into account bridge length and speed. 
+We all count the time to cross all the bridge in parallel . This way we can count it fast.
+
